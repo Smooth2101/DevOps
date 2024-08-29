@@ -1,0 +1,51 @@
+#Создание ветки 
+git branch <имя ветки>
+
+#Переключение ветки
+git checkout <имя ветки>
+
+#Создание и переключение на ветку
+git checkout -b <имя ветки>
+
+#Удаление ветки
+git branch -D <имя ветки>
+
+#Переименование ветки(необходимо выйти из данной ветки)
+git branch -m <имя ветки>
+
+#Переименование ветки
+git branch -m <имя старой ветки> <имя новой ветки>
+
+#Список веток в удаленном репозитории
+git fetch && git branch -r
+
+#Добавление ветки из удаленного репозитория в локальный репозитории
+git fetch origin <имя ветки>
+
+#Добавление ветки из удаленного репозитория в локальный репозитории с измененным именем
+git fetch origin <имя ветки>:<имя новой ветки>
+
+#Слияние веток
+git merge <имя ветки>
+
+#Создать git flow
+git flow init
+
+#Создать ветку feature
+git flow feature start <имя ветки>
+
+#Закрыть ветку feature
+git flow feature finish <имя ветки>
+
+#Создать ветку hotfix
+git flow hotfix start <имя ветки>
+
+#Закрыть ветку hotfix
+git flow hotfix finish <имя ветки>
+
+#Создать ветку release
+git flow release start <имя ветки>
+
+#Закрыть ветку release
+git flow release finish <имя ветки>
+
