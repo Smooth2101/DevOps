@@ -1,19 +1,34 @@
+#Имя и почта глобально
+git config --global user.name, user.email
+
+#Имя и почта локально(для данного репозитория)
+git config --local user.name, user.email
+
+#Имя и почта системы
+git config --system user.name, user.email
 #Инициализация локального репоситория
 git init
+
 #Добавление файлов в репозиторий
 git add .
+
 #Создание комита
 git commit -m ""
+
 #Отправка на удаленный репозиторий
 git push
+
 # Клонирование репозитория
 git clone
+
 #Создание тэга
 git tag -a <имя тэга> -m <коментарий>
+
 #Добавление изменений в локальный репозиторий
 git pull
+
 #Изменение комита
 git commit --amend
+
 #Просмотр изменений
 git diff
-
