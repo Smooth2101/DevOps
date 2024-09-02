@@ -1,0 +1,33 @@
+version: "3.3"
+services:
+  web:
+    build: .
+    ports:
+    - "5000:5000"
+    restart: always
+    volumes:
+      - ./:/home/flask/app
+    depends_on:
+      - redis
+      - postgres
+    links:
+      - redis
+      - postgres
+  redis:
+    restart: always
+    image: "redis:alpine"
+    expose:
+      - "6379"
+  postgres:
+    restart: always
+    image: postgres:alpine
+    volumes:
+      - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - slurm_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD:
+      POSTGRES_DB:
+    expose:
+      - "5432"
+volumes:
+  slurm_data:
